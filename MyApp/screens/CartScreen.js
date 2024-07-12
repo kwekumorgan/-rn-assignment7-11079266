@@ -48,12 +48,21 @@ const CartScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      <View>
+        <View  style={styles.header}>
         <Image source={require('../assets/Logo.png')} style={styles.logo} />
-        <Text style={styles.checkoutText}>CHECKOUT</Text>
         <View style={styles.headerIcons}>
           <Image source={require('../assets/Search(1).png')} style={styles.headerIcon} />
         </View>
+        </View>
+        <Text style={styles.checkoutText}>CHECKOUT</Text>
+        <View style={{flexDirection:'row'}}>
+        <Text style={styles.line}></Text>
+        <Text style={styles.line}>◊</Text>
+        </View>
+
+
+        
       </View>
       <FlatList
         data={cartItems}
@@ -61,8 +70,10 @@ const CartScreen = ({ navigation }) => {
         keyExtractor={(item) => item.id.toString()}
         contentContainerStyle={styles.flatListContent}
       />
+      
       <TouchableOpacity style={styles.cartButton} onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.cartButtonText}>CHECKOUT</Text>
+        <Text style={styles.cartButtonText}> 🛍️CHECKOUT </Text>
+        
       </TouchableOpacity>
     </View>
   );
@@ -72,25 +83,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: 30,
+    marginTop: 1,
   },
   header: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+   
     paddingTop: 20,
   },
   logo: {
     width: 120,
     height: 40,
     resizeMode: 'contain',
-    marginLeft: 50,
+    marginLeft: 100,
   },
   checkoutText: {
-    fontSize: 16,
+    fontSize: 24,
+    fontWeight:'500',
     textDecorationLine: 'underline',
-    marginTop: 50,
-    marginRight: 60,
+    marginTop: 10,
+    marginLeft:110 ,
   },
   headerIcons: {
     flexDirection: 'row',
@@ -122,8 +133,10 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   itemPrice: {
-    fontSize: 14,
+    fontSize: 23,
     marginBottom: 5,
+    color:'orange'
+    
   },
   itemDescription: {
     fontSize: 12,
@@ -151,11 +164,19 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     alignItems: 'center',
+    position:'relative',
   },
   cartButtonText: {
     color: 'white',
     fontSize: 16,
   },
+  line: {
+    width: '40%',  
+    height: 1,         
+    backgroundColor: '#ccc', 
+    marginRight:10,
+    marginLeft:20
+},
 });
 
 export default CartScreen;
