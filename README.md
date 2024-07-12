@@ -27,27 +27,6 @@ Data is fetched from an external API (`https://fakestoreapi.com/products`) using
 ## Local Storage
 `AsyncStorage` is used to store cart items locally on the device. This enables the app to remember the user's cart items even after closing and reopening the app.
 
-## Screenshots
-![HomeScreen](screenshots/HomeScreen.png)
-![ProductDetailScreen](screenshots/ProductDetailScreen.png)
-![CartScreen](screenshots/CartScreen.png)
-![Sidebar](screenshots/Sidebar.png)
-
-## Setup and Installation
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/rn-assignment7-11079266.git
-    ```
-2. Install dependencies:
-    ```sh
-    cd rn-assignment7-ID
-    npm install
-    ```
-3. Start the project:
-    ```sh
-    npm start
-    ```
-
 
 
 ## Screenshots
